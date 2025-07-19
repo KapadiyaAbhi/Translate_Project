@@ -1,0 +1,20 @@
+{% extends "main/base.html" %}
+{% block content %}
+<h2>Upload File for Translation</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.file.label_tag }}<br>
+        {{ form.file }}
+    </div>
+    <div class="mb-3">
+        {{ form.source_language.label_tag }}<br>
+        {{ form.source_language }}
+    </div>
+    <div class="mb-3">
+        {{ form.language.label_tag }}<br>
+        {{ form.language }}
+    </div>
+    <button type="submit" class="btn btn-primary">Translate</button>
+</form>
+{% endblock %}
